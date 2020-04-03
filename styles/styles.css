@@ -13,49 +13,58 @@
 
 .content .hex {
   cursor: pointer;
-  display: inline-block;
-  width: 50px;
-  height: calc(50px * 0.57895);
+  width: 20vw;
+  height: calc(20vw * 0.57895);
   text-align: center;
   position: relative;
-  background-color: #dee;
-  -webkit-transition: 500ms;
-  transition: 500ms;
-  z-index: 3;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
-.content .hex:hover {
+.content .hex .content {
+  z-index: 10;
+}
+
+.content .hex:hover .hex1 {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+}
+
+.content .hex:hover .hex2 {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+}
+
+.content .hex:hover .hex3 {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 
-.content .hex:hover .box2 {
-  -webkit-transform: rotate(60deg);
-          transform: rotate(60deg);
+.content .hex .hex1,
+.content .hex .hex2 {
+  width: 100%;
 }
 
-.content .hex:hover .box3 {
-  -webkit-transform: rotate(-60deg);
-          transform: rotate(-60deg);
-}
-
-.content .hex .box2 {
+.content .hex .hex1,
+.content .hex .hex2,
+.content .hex .hex3,
+.content .hex .content {
   position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
   background-color: #dee;
-  -webkit-transition: 500ms;
-  transition: 500ms;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
-.content .hex .box3 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #dee;
-  -webkit-transition: 500ms;
-  transition: 500ms;
+.content .hex .content {
+  font-family: 'Sen', Arial, sans-serif;
+  font-size: calc(3.33333vw);
 }
 /*# sourceMappingURL=styles.css.map */
