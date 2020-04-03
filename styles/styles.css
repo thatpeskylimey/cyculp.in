@@ -21,8 +21,8 @@
   display: -ms-flexbox;
   display: flex;
   font-family: 'Sen', Arial, sans-serif;
-  font-size: calc(3.33333vw);
-  height: calc(20vw * 0.57895);
+  font-size: calc(1.16667vw);
+  height: calc(7vw * 0.57895);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -30,7 +30,7 @@
   text-align: center;
   -webkit-transition: 500ms ease-in-out;
   transition: 500ms ease-in-out;
-  width: 20vw;
+  width: 7vw;
 }
 
 .content .hex:before, .content .hex:after {
