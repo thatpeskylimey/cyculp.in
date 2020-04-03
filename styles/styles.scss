@@ -1,56 +1,48 @@
 $width: 20vw; // change me!
-$speed: 500ms ease-in-out; // Speed me up or slow me down! 
-$color: #dee;
+$speed: 500ms ease-in-out; // Speed me up or slow me down
+$color: #dee; // change the hexagon colour
 
 $hexFraction: 0.57894736842;
 $fontSize: 1.0em;
 
 .content {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
     align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
 
     .hex {
+        align-items: center;
+        background-color: $color;
         cursor: pointer;
-        width: $width;
+        display: flex;
+        font-family: 'Sen', Arial, sans-serif;
+        font-size: calc(#{$width/6});
         height: calc(#{$width} * #{$hexFraction});
-        text-align: center;
+        justify-content: center;        
         position: relative;
+        text-align: center;
         transition: $speed;
-        .content {
-            z-index: 10;
-        }
-        &:hover .hex1 {
-            transform: rotate(60deg);
-            transform-origin: center center;
-            width: 100%;
-        }
-        &:hover .hex2 {
-            transform: rotate(-60deg);
-            transform-origin: center center;
-            width: 100%;
-        }
-        &:hover .hex3 {
-            transform: rotate(-180deg);
-        }
-        .hex1,
-        .hex2 {
-            width: 100%;
-        }
-        .hex1,
-        .hex2,
-        .hex3,
-        .content {
-            position: absolute;
-            width: 100%;
+        width: $width;
+
+        &:before,
+        &:after {
+            background-color: inherit;
+            content: "";
+            left: 0;
             height: 100%;
-            background-color: $color;
+            position: absolute;
+            top: 0;
             transition: $speed;
-        }      
-        .content {
-            font-family: 'Sen', Arial, sans-serif;
-            font-size: calc(#{$width/6});
+            transform-origin: center center;
+            width: 100%;
+            z-index: -1;
+        }
+        &:hover:before {
+            transform: rotate(60deg);
+        }
+        &:hover:after {
+            transform: rotate(-60deg);
         }
     }
 }
