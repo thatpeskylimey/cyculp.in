@@ -4,5 +4,4 @@ deployment:
  - export DEPLOYPATH=/home/cycycy/public_html/hexagons/
  - /bin/cp -R hexagons.html $DEPLOYPATH
 - /bin/cp -R styles $DEPLOYPATH
-
 #- /bin/cp -r * $DEPLOYPATH
