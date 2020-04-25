@@ -1,6 +1,6 @@
 ---
 deployment:
  tasks:
- - export DEPLOYPATH=/home/cycycy/public_html/
- - /bin/cp index.html $DEPLOYPATH
- - /bin/cp style.css $DEPLOYPATH
+ - export DEPLOYPATH=/home/cycycy/public_html/hexagons/
+ - /bin/cp hexagons.html $DEPLOYPATH
+- /bin/cp -R styles $DEPLOYPATH
