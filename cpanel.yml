@@ -2,7 +2,7 @@
 deployment:
  tasks:
  - export DEPLOYPATH=/home/cycycy/public_html/hexagons/
-# - /bin/cp hexagons.html $DEPLOYPATH
-#- /bin/cp -R styles $DEPLOYPATH
+ - /bin/cp -R hexagons.html $DEPLOYPATH
+- /bin/cp -R styles $DEPLOYPATH
 
-- /bin/cp -r * $DEPLOYPATH
+#- /bin/cp -r * $DEPLOYPATH
