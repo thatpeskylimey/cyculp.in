@@ -1,0 +1,8 @@
+# ignore workspace
+*.code-workspace
+
+#ignore sass files
+*.scss
+
+# Mac files
+.DS_Store
