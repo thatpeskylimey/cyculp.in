@@ -1,48 +1,68 @@
-$width: 7vw; // change me!
-$speed: 500ms ease-in-out; // Speed me up or slow me down
-$color: #dee; // change the hexagon colour
+:root {
+  --font-face: 'Pridi', serif;
+  --headings: 'DM Serif Display', serif;
+}
 
-$hexFraction: 0.57894736842;
-$fontSize: 1.0em;
+h1,
+.h1 {
+  font-size: 2.8rem;
+  font-family: var(--headings);
+}
+h2,
+.h2 {
+  font-family: var(--headings);
+  font-size: 2.4rem;
+}
+h3,
+.h3 {
+  font-family: var(--headings);
+  font-size: 2.1rem;
+}
+p {
+  font-size: 1.6rem;
+}
 
-.content {
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
+html {
+  font-size: 62.5%;
+  font-family: var(--font-face);
+}
 
-    .hex {
-        align-items: center;
-        background-color: $color;
-        cursor: pointer;
-        display: flex;
-        font-family: 'Sen', Arial, sans-serif;
-        font-size: calc(#{$width/6});
-        height: calc(#{$width} * #{$hexFraction});
-        justify-content: center;        
-        position: relative;
-        text-align: center;
-        transition: $speed;
-        width: $width;
+body {
+  background: #eaeaea;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 1rem;
+}
 
-        &:before,
-        &:after {
-            background-color: inherit;
-            content: "";
-            left: 0;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            transition: $speed;
-            transform-origin: center center;
-            width: 100%;
-            z-index: -1;
-        }
-        &:hover:before {
-            transform: rotate(60deg);
-        }
-        &:hover:after {
-            transform: rotate(-60deg);
-        }
-    }
+.grid {
+  /* Grid Fallback */
+  display: flex;
+  flex-wrap: wrap;
+  
+  /* Supports Grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 1em;
+}
+
+.module {
+  background: #fff;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // height: 150px;
+  
+  // /* Flex Fallback */
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
+}
+
+/* If Grid is supported, remove the margin we set for the fallback */
+@supports (display: grid) {
+  .module {
+    margin: 0;
+    border: 3px solid orange;
+  }
 }
